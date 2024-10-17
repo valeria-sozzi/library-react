@@ -1,0 +1,23 @@
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    background-image: url('https://e0.pxfuel.com/wallpapers/12/355/desktop-wallpaper-library-old-library.jpg');
+    background-size: cover;
+    opacity: 0.8;
+    padding: 2rem;
+    gap:2rem;
+    .col-left{
+        width:35%;
+    }
+    .col-right{
+        width: 65%;
+    }
+    .books-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-evenly;
+    }
+    
+    
+}
