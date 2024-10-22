@@ -16,14 +16,33 @@
         }
     }
     .details-book{
+        height: 40%;
         display: flex;
         flex-direction: column;
-        row-gap: 1rem;
+        justify-content: space-evenly;
         p{
             font-size: 1.2rem;
         }
+        .book-info{
+            display: flex;
+            justify-content: space-evenly;
+            button{
+                background-color: transparent;
+                border-radius: 35px;
+                padding: 3px 25px;
+            }
+            .link{
+                color: brown;
+                font-weight: 800;
+                font-size: 1.2rem;
+                .cart{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    
         
     }
-
+    
     
 }
