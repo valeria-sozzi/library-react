@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, cartElements, setCartElements }) => {
   return (
     <div className="card-book">
       <div className="image">
@@ -17,7 +17,18 @@ const BookCard = ({ book }) => {
           <Link to={"/dettagli"} state={{ book: book }} className="link">
             Dettagli
           </Link>
-          <button className="link">
+          <button
+            className="link"
+            onClick={() => {
+              const bookOnCart = {
+                title: book.title,
+                price: book.price,
+                id: book.id,
+              };
+              const newCartElements = [...cartElements, bookOnCart];
+              setCartElements(newCartElements);
+            }}
+          >
             <FontAwesomeIcon icon={faCartShopping} className="cart" />
           </button>
         </div>

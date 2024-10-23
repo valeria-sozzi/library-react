@@ -9,6 +9,9 @@
     gap:2rem;
     .col-left{
         width:35%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
     }
     .col-right{
         width: 65%;

@@ -4,9 +4,11 @@ import InputForm from "./inputForm/InputForm";
 import "./Main.scss";
 import BookHome from "./bookHome/BookHome";
 import BookDetails from "./bookDetails/BookDetails";
+import Cart from "./cart/Cart";
 
 const Main = ({ books }) => {
   const [bookValue, setBookValue] = useState("");
+  const [cartElements, setCartElements] = useState([]);
   return (
     <BrowserRouter>
       <Routes>
@@ -20,9 +22,15 @@ const Main = ({ books }) => {
                     bookValue={bookValue}
                     setBookValue={setBookValue}
                   />
+                  <Cart cartElements={cartElements} />
                 </div>
                 <div className="col-right">
-                  <BookHome books={books} bookValue={bookValue} />
+                  <BookHome
+                    books={books}
+                    bookValue={bookValue}
+                    cartElements={cartElements}
+                    setCartElements={setCartElements}
+                  />
                 </div>
               </main>
             </>
@@ -38,9 +46,13 @@ const Main = ({ books }) => {
                     bookValue={bookValue}
                     setBookValue={setBookValue}
                   />
+                  <Cart cartElements={cartElements} />
                 </div>
                 <div className="col-right">
-                  <BookDetails />
+                  <BookDetails
+                    cartElements={cartElements}
+                    setCartElements={setCartElements}
+                  />
                 </div>
               </main>
             </>
